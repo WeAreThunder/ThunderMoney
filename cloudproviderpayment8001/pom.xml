@@ -17,7 +17,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
-        <!--eureka-server-->
+        <!--eureka-server2.0客户端包-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -67,6 +67,7 @@
             <artifactId>cloud_api_commons</artifactId>
             <version>${project.version}</version>
         </dependency>
+
     </dependencies>
 
 
