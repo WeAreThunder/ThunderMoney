@@ -15,9 +15,10 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
     @PostMapping("/payment/create")
-    public CommonResult create(Payment payment){
+    //当用户服务访问该接口时，一定要记得加@RequesstBody标签，不然数据无法传递，此处为巨坑啊
+    public CommonResult create(@RequestBody Payment payment){
         int result = paymentService.insert(payment);
-        log.info("插入结果为:"+result);
+        log.info("插入结果为:"+result+"，插入数据为："+payment.getSerial());
         if (result > 0){
             return new CommonResult(200,"插入数据库成功",result);
         }else {

@@ -19,6 +19,7 @@ public class OrderController {
 
     @PostMapping("/consumer/payment/create")
     public CommonResult<Payment> create(Payment payment){
+        log.info("用户传递数据为："+payment.getSerial());
         return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);
     }
     @GetMapping("/consumer/payment/get/{id}")
